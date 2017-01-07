@@ -1,12 +1,12 @@
 " Vim syntax file
-" Language:Ruta Script
+" Language:Apache UIMA Ruta
 " Maintainer:Ergin Soysal <esoysal@gmail.com>
 " URL: http://soysal.net
 " Last Change:2017 Dec. 3
-" Version: 0.4
+" Version: 0.1
 "
 " Changelog:
-"   0.1 - initial upload, modification from vimscript#1201, Extended c.vim
+"   0.1 - initial version
 
 if exists("b:current_syntax")
   finish
@@ -38,14 +38,6 @@ syn keyword rutaElement Document Sentence
 syn region rutaString start='"' end='"'
 syn region rutaString start="'" end="'"
 
-" Operators
-"syn match rutaOperator"\(<<\|>>\|[-+*/%&^|<>!=]\)="
-"syn match rutaOperator"<<\|>>\|&&\|||\|++\|--\|->"
-"syn match rutaOperator"[.!~*&%<>^|=,+-]"
-"syn match rutaOperator"/[^/*=]"me=e-1
-"syn match rutaOperator"/$"
-"syn match rutaOperator "&&\|||"
-"syn match rutaOperator"[][]"
 syn match rutaNumber '\d\+'
 syn match rutaNumber '[-+]\d\+'
 syn match rutaNumber '\d\+\.\d*'
@@ -68,9 +60,5 @@ hi def link rutaNumber     Number
 hi def link rutaCondition  Conditional
 hi def link rutaClass      Constant
 hi def link rutaOperator   Delimiter
-
-" Number Special(Delimiter) Identifier(Function) Constant(String Number
-" Boolean) Statement(Conditional Operator Keyword) PreProc(Include Define)
-" Type (Structure TypeDef) Underlined Ignore Error Normal
 
 let b:current_syntax = "ruta"
