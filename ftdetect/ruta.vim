@@ -1,4 +1,4 @@
-" Vim file type detection for Apache UIMA Ruta
+" Vim file type detection for Apache UIMA Ruta Script
 " Maintainer:Ergin Soysal <esoysal@gmail.com>
 " URL: http://soysal.net
 " Last Change:2017 Dec. 3
