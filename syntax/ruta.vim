@@ -2,21 +2,26 @@
 " Language: Apache UIMA Ruta Script
 " Maintainer: Ergin Soysal <esoysal@gmail.com>
 " URL: http://soysal.net
-" Last Change: 2017 Dec. 7
-" Version: 0.1
+" Last Change: 2017 Dec. 8
+" Version: 0.2
 "
 " Changelog:
 "   0.1 - initial version
+"   0.2 - added supports for multiplicity and multiline comments
+"         fixed repeat elements, distinguished operator and delimiter
 
 if exists("b:current_syntax")
   finish
 endif
 
-syn match rutaOperator "[(,).;{}\[\]\^]"
+syn match rutaDelimiter "[(,).;{}\[\]\^]"
 syn match rutaOperator "[*?+\-%/|=<>!]"
+
+syn match rutaMulti '\[[^\]*]\][*+?]*'
 
 syn keyword rutaTodo contained TODO FIXME XXX NOTE
 syn match rutaComment "//.*$" contains=rutaTodo
+syn region rutaComment start="/\*" end="\*/" contains=rutaTodo
 
 syn keyword rutaComponent TYPESYSTEM SCRIPT IMPORT PACKAGE ENGINE UIMAFIT
 syn keyword rutaResource WORDLIST WORDTABLE
@@ -39,7 +44,7 @@ syn keyword rutaAction SETFEATURE SHIFT SPLIT TRANSFER TRIE TRIM UNMARK UNMARKAL
 syn keyword rutaClass COLON SW MARKUP PERIOD CW NUM QUESTION SPECIAL CAP COMMA
 syn keyword rutaClass EXCLAMATION SEMICOLON NBSP AMP _ SENTENCEEND W PM ANY
 syn keyword rutaClass ALL SPACE BREAK'
-syn keyword rutaBlock BLOCK FOREACH
+syn keyword rutaRepeat BLOCK FOREACH
 syn keyword rutaElement Document Sentence
 syn region rutaString start='"' end='"'
 syn region rutaString start="'" end="'"
@@ -48,7 +53,6 @@ syn match rutaNumber '\d\+'
 syn match rutaNumber '[-+]\d\+'
 syn match rutaNumber '\d\+\.\d*'
 syn match rutaNumber '[-+]\d\+\.\d*'
-
 
 " Regions
 syn region syntaxElementRegion start='{' end='}' fold transparent
@@ -65,6 +69,9 @@ hi def link rutaString     String
 hi def link rutaNumber     Number
 hi def link rutaCondition  Conditional
 hi def link rutaClass      Constant
-hi def link rutaOperator   Delimiter
+hi def link rutaDelimiter  Delimiter
+hi def link rutaOperator   Operator
+hi def link rutaRepeat     Repeat
+hi def link rutaMulti      Operator
 
 let b:current_syntax = "ruta"
