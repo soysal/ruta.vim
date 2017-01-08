@@ -17,7 +17,7 @@ endif
 syn match rutaDelimiter "[(,).;{}\[\]\^]"
 syn match rutaOperator "[*?+\-%/|=<>!]"
 
-syn match rutaMulti '\[[^\]*]\][*+?]*'
+syn match rutaMulti '\[[^\]]*\][*+?]*'
 
 syn keyword rutaTodo contained TODO FIXME XXX NOTE
 syn match rutaComment "//.*$" contains=rutaTodo
