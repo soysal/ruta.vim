@@ -8,7 +8,7 @@ A syntax highlighter for Apache UIMA Ruta scripts.
 
 ## Install
 
-Use [Vim-Plug][], [Vundle][] or [pathogen.vim][] is recommended.
+Use of [Vim-Plug][], [Vundle][] or [pathogen.vim][] is recommended.
 
 [Vim-Plug]:https://github.com/junegunn/vim-plug
 [Vundle]:https://github.com/gmarik/vundle
