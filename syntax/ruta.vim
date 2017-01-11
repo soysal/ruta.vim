@@ -14,6 +14,8 @@ if exists("b:current_syntax")
   finish
 endif
 
+syn case match
+
 syn match rutaDelimiter "[(,).;{}\[\]\^]"
 syn match rutaOperator "[*?+\-%/|=<>!]"
 
