@@ -1,5 +1,5 @@
 # ruta.vim
-A syntax highlighter for Apache UIMA Ruta scripts. Currently, only aims quick updates on the server.
+A syntax highlighter for Apache UIMA Ruta scripts. Currently, it only aims to help quick updates on the server.
 
 ## Features
 
